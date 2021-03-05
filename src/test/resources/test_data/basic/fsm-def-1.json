@@ -1,0 +1,103 @@
+{
+	"name": "test-fsm-1",
+	"scope": "GLOBAL",
+	"definitionId": "fsm-001",
+	"outputEvent": "Completed",
+	"initialActionInstanceId": "validator1",
+	"targetEvents": [
+		"DataTransformed"
+	],
+	"actionInstances": [
+		{
+			"actionDefinitionId": "act-001",
+			"instanceName": "validator1",
+			"parameterMappingTable": {
+				"inputContextKey": "inputContextKey"
+			}
+		},
+		{
+			"actionDefinitionId": "act-002",
+			"instanceName": "validator2",
+			"parameterMappingTable": {
+				"inputContextKey": "inputContextKey"
+			}
+		},
+		{
+			"actionDefinitionId": "act-004",
+			"instanceName": "converter1",
+			"parameterMappingTable": {
+				"inputContextKey": "inputContextKey",
+				"outputContextKey": "converterOutputContextKey"
+			}
+		},
+		{
+			"actionDefinitionId": "act-004",
+			"instanceName": "converter2",
+			"parameterMappingTable": {
+				"inputContextKey": "inputContextKey",
+				"outputContextKey": "converterOutputContextKey"
+			}
+		},
+		{
+			"actionDefinitionId": "act-005",
+			"instanceName": "transformer",
+			"parameterMappingTable": {
+				"inputContextKey": "converterOutputContextKey",
+				"outputContextKey": "transformerOutputContextKey"
+			}
+		},
+		{
+			"actionDefinitionId": "act-003",
+			"instanceName": "fatalErrorHandler",
+			"parameterMappingTable": {
+			}
+		},
+		{
+			"actionDefinitionId": "act-003",
+			"instanceName": "nonFatalErrorHandler",
+			"parameterMappingTable": {
+			}
+		},
+		{
+			"actionDefinitionId": "act-003",
+			"instanceName": "nonFatalErrorHandlerFromConversion",
+			"parameterMappingTable": {
+			}
+		}
+	],
+	"eventChainConfigurations": [
+		{
+			"sourceInstanceName": "validator1",
+			"sourceOutputEvent": "Valid",
+			"targetInstanceName": "validator2"
+		},
+		{
+			"sourceInstanceName": "validator1",
+			"targetInstanceName": "fatalErrorHandler"
+		},
+		{
+			"sourceInstanceName": "validator2",
+			"sourceOutputEvent": "Valid",
+			"targetInstanceName": "converter1"
+		},
+		{
+			"sourceInstanceName": "converter1",
+			"sourceOutputEvent": "DataConverted",
+			"targetInstanceName": "transformer"
+		},
+		{
+			"sourceInstanceName": "converter1",
+			"sourceOutputEvent": "DataConversionFailure",
+			"targetInstanceName": "nonFatalErrorHandlerFromConversion"
+		},
+		{
+			"sourceInstanceName": "validator2",
+			"targetInstanceName": "nonFatalErrorHandler"
+		},
+		{
+			"sourceInstanceName": "nonFatalErrorHandler",
+			"sourceOutputEvent": "ErrorHandled",
+			"targetInstanceName": "converter2"
+		}
+	]
+}

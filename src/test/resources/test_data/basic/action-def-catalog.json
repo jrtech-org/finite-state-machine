@@ -1,0 +1,87 @@
+[
+	{
+		"definitionId": "act-001",
+		"name": "Validator1",
+		"actionClassName": "org.jumin.engines.fsm.actions.Validator1",
+		"outputEvent": "Valid",
+		"alternateEvents": [
+			"NotValid1",
+			"NotValid2"
+		],
+		"parameterDefinitions": [
+			{
+				"name": "inputContextKey"
+			},
+			{
+				"name": "validationResultContextKey",
+				"direction": "OUT"
+			}
+		]
+	},
+	{
+		"definitionId": "act-002",
+		"name": "Validator2",
+		"actionClassName": "org.jumin.engines.fsm.actions.Validator2",
+		"outputEvent": "Valid",
+		"alternateEvents": [
+			"NotValid1",
+			"NotValid2"
+		],
+		"parameterDefinitions": [
+			{
+				"name": "inputContextKey"
+			},
+			{
+				"name": "validationResultContextKey",
+				"direction": "OUT"
+			}
+		]
+	},
+	{
+		"definitionId": "act-003",
+		"name": "ErrorHandler",
+		"actionClassName": "org.jumin.engines.fsm.actions.ErrorHandler",
+		"outputEvent": "ErrorHandled",
+		"parameterDefinitions": [
+			{
+				"name": "validationResultContextKey"
+			}
+		]
+	},
+	{
+		"definitionId": "act-004",
+		"name": "Converter",
+		"actionClassName": "org.jumin.engines.fsm.actions.Converter",
+		"outputEvent": "DataConverted",
+		"alternateEvents": [
+			"DataConversionFailure"
+		],
+		"parameterDefinitions": [
+			{
+				"name": "inputContextKey"
+			},
+			{
+				"name": "outputContextKey",
+				"direction": "OUT"
+			}
+		]
+	},
+	{
+		"definitionId": "act-005",
+		"name": "Transformed",
+		"actionClassName": "org.jumin.engines.fsm.actions.Transformer",
+		"outputEvent": "DataTransformed",
+		"alternateEvents": [
+			"DataTransformationFailure"
+		],
+		"parameterDefinitions": [
+			{
+				"name": "inputContextKey"
+			},
+			{
+				"name": "outputContextKey",
+				"direction": "OUT"
+			}
+		]
+	}
+]

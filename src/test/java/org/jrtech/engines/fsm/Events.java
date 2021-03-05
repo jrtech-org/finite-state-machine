@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2016-2018 Jumin Rubin
+ * LinkedIn: https://www.linkedin.com/in/juminrubin/
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.jrtech.engines.fsm;
+
+public class Events {
+    public static final String ERROR_HANDLED = "ErrorHandled";
+    public static final String VALIDATION_VALID = "Valid";
+    public static final String VALIDATION_NOTVALID_1 = "NotValid1";
+    public static final String VALIDATION_NOTVALID_2 = "NotValid2";
+
+    public static final String DATA_CONVERTED = "DataConverted";
+    public static final String DATA_CONVERSION_FAILURE = "DataConversionFailure";
+    public static final String DATA_TRANSFORMED = "DataTransformed";
+    public static final String DATA_TRANSFORMATION_FAILURE = "DataTransformationFailure";
+}
