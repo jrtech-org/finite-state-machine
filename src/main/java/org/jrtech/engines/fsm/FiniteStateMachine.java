@@ -145,6 +145,12 @@ public class FiniteStateMachine extends AbstractAlternableEventsAction {
         return this;
     }
 
+    /**
+     * Run the configured state machine definition with the provided context data.
+     *
+     * @param processContextData the context data for processing
+     * @return the output state of the last executed action
+     */
     public String run(ProcessContext processContextData) throws StateMachineRuntimeException {
         Action initialAction = getInitialAction();
         if (initialAction == null) {
