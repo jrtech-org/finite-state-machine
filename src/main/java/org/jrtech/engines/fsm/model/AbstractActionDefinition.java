@@ -36,7 +36,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * An abstract definition of an action in a design time. This class also represents a specification of the runtime <code>org.jumin.engines.fsm.model.Action</code>.
+ * An abstract definition of an action in a design time. This class also represents a specification of the runtime <code>org.jrtech.engines.fsm.Action</code>.
  * 
  * @author Jumin
  *

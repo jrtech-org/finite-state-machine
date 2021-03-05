@@ -2,7 +2,7 @@
 	{
 		"definitionId": "act-001",
 		"name": "Validator1",
-		"actionClassName": "org.jumin.engines.fsm.actions.Validator1",
+		"actionClassName": "org.jrtech.engines.fsm.actions.Validator1",
 		"outputEvent": "Valid",
 		"alternateEvents": [
 			"NotValid1",
@@ -21,7 +21,7 @@
 	{
 		"definitionId": "act-002",
 		"name": "Validator2",
-		"actionClassName": "org.jumin.engines.fsm.actions.Validator2",
+		"actionClassName": "org.jrtech.engines.fsm.actions.Validator2",
 		"outputEvent": "Valid",
 		"alternateEvents": [
 			"NotValid1",
@@ -40,7 +40,7 @@
 	{
 		"definitionId": "act-003",
 		"name": "ErrorHandler",
-		"actionClassName": "org.jumin.engines.fsm.actions.ErrorHandler",
+		"actionClassName": "org.jrtech.engines.fsm.actions.ErrorHandler",
 		"outputEvent": "ErrorHandled",
 		"parameterDefinitions": [
 			{
@@ -51,7 +51,7 @@
 	{
 		"definitionId": "act-004",
 		"name": "Converter",
-		"actionClassName": "org.jumin.engines.fsm.actions.Converter",
+		"actionClassName": "org.jrtech.engines.fsm.actions.Converter",
 		"outputEvent": "DataConverted",
 		"alternateEvents": [
 			"DataConversionFailure"
@@ -69,7 +69,7 @@
 	{
 		"definitionId": "act-005",
 		"name": "Transformed",
-		"actionClassName": "org.jumin.engines.fsm.actions.Transformer",
+		"actionClassName": "org.jrtech.engines.fsm.actions.Transformer",
 		"outputEvent": "DataTransformed",
 		"alternateEvents": [
 			"DataTransformationFailure"
