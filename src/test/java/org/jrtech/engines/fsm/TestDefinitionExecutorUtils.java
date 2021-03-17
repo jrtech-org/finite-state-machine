@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2018 Jumin Rubin
+ * Copyright (c) 2016-2026 Jumin Rubin
  * LinkedIn: https://www.linkedin.com/in/juminrubin/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
