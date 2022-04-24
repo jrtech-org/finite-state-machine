@@ -22,11 +22,15 @@ import java.io.InputStream;
 import org.jrtech.engines.fsm.loader.ActionJsonDeserializer;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
 public class TestJsonLoader {
+
+    private static Logger LOGGER = LoggerFactory.getLogger(TestJsonLoader.class);
 
     @Test
     public void loadActionCatalog() {
@@ -46,12 +50,13 @@ public class TestJsonLoader {
             }
             // ArrayList<ActionDefinition> actionDefList = new ArrayList<>();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Failure in loading action definition catalog.", e);
             Assert.fail(e.getMessage());
         } finally {
             try {
                 jsonStream.close();
             } catch (IOException e) {
+                LOGGER.error("Failure in closing file of action definition catalog.", e);
             }
         }
     }

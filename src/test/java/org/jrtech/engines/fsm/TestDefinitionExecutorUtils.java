@@ -25,6 +25,8 @@ import org.jrtech.engines.fsm.model.AbstractActionDefinition;
 import org.jrtech.engines.fsm.model.FiniteStateMachineDefinition;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,6 +34,8 @@ import java.text.NumberFormat;
 import java.util.Map;
 
 public class TestDefinitionExecutorUtils {
+
+    private static Logger LOGGER = LoggerFactory.getLogger(TestDefinitionExecutorUtils.class);
 
     private ObjectDefinitionLoader defLoader = new ObjectDefinitionLoader();
 
@@ -42,13 +46,14 @@ public class TestDefinitionExecutorUtils {
         try {
             actionDefinitionCatalog = defLoader.loadActionCatalog(jsonStream);
         } catch (ObjectLoadingException e) {
-            e.printStackTrace();
+            LOGGER.error("Failure in loading action definition catalog.", e);
             Assert.fail(e.getMessage());
         } finally {
             if (jsonStream != null)
                 try {
                     jsonStream.close();
                 } catch (IOException e) {
+                    LOGGER.error("Failure in closing file of action definition catalog.", e);
                 }
         }
         
@@ -57,13 +62,14 @@ public class TestDefinitionExecutorUtils {
         try {
             fsmDefinition = defLoader.loadFiniteStateMachineDefinition(jsonStream);
         } catch (ObjectLoadingException e) {
-            e.printStackTrace();
+            LOGGER.error("Failure in loading FSM definition.", e);
             Assert.fail(e.getMessage());
         } finally {
             if (jsonStream != null)
                 try {
                     jsonStream.close();
                 } catch (IOException e) {
+                    LOGGER.error("Failure in closing file of FSM definition.", e);
                 }
         }   
                 
