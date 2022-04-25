@@ -122,7 +122,7 @@ public class FiniteStateMachine extends AbstractAlternableEventsAction {
      * @param previousAction
      * @param fromEvent
      * @param nextAction
-     * @return
+     * @return this finite state machine object
      */
     public FiniteStateMachine configure(Action previousAction, String fromEvent, Action nextAction) {
         stateMachineConfig.put(utils.getActionSignature(previousAction) + "/" + fromEvent, nextAction);
@@ -138,7 +138,7 @@ public class FiniteStateMachine extends AbstractAlternableEventsAction {
      * 
      * @param previousAction
      * @param nextAction
-     * @return
+     * @return this finite state machine object
      */
     public FiniteStateMachine configure(Action previousAction, Action nextAction) {
         stateMachineConfig.put(utils.getActionSignature(previousAction) + "/*", nextAction);

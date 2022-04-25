@@ -44,9 +44,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
 /**
- * A class that contains methods to load object definitions e.g.<br>
- * <li>Catalog of ActionDefinition</li>
- * <li>FiniteStateMachineDefinition</li>
+ * A class that contains methods to load object definitions e.g.
+ * <ul>
+ * <li>Catalog of ActionDefinition
+ * <li>FiniteStateMachineDefinition
+ * </ul>
  * <p>
  * 
  * @author Jumin
